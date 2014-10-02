@@ -30,7 +30,12 @@ function getFilename(form, req, res) {
             new_path = path.join(process.env.PWD, '/uploads/', file_name + '.' + file_ext);
             //new_path = path.join(process.env.PWD, '/uploads/', files.file.name);
 
-        storeFile(old_path, new_path, res);
+        if (file_size == 0 || file_ext != 'apk') {
+            res.redirect('/upload')
+        }
+        else {
+            storeFile(old_path, new_path, res);
+        }
     });
 }
 
@@ -53,6 +58,7 @@ function hadError(err, res) {
     res.status(500);
     res.end('Server Error');
 }
+
 /* POST upload END */
 
 module.exports = router;
