@@ -2,3 +2,5 @@ GooglePlayCrawler/googleplay/crawler.conf
 
 SAAF/conf/saaf.conf
 SAAF/de/
+
+web/node_modules/
