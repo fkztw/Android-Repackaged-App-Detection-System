@@ -1,0 +1,8 @@
+doctype html
+html
+    head
+        h1 Upload Your APK file.
+    body
+            form(method="POST", action="/upload", enctype="multipart/form-data")
+                input(type="file", name="file")
+                input(type="submit")
